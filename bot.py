@@ -1,9 +1,10 @@
 import string
 import time
+import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTypes
 
-TOKEN = "8793230627:AAFAc987PxepN-5ELULae-TQpNL67_xgH3o"
+TOKEN = os.getenv("TELEGRAM_TOKEN")
 
 last_reply_time = {}
 # Приветствие новых участников
@@ -16,7 +17,7 @@ async def welcome(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
 # Общий автоответ на ключевые слова
-async def auto_reply(update, context):
+async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not update.message or not update.message.text:
         return
 
