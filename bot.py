@@ -1,10 +1,13 @@
 import string
+import random
 import time
 import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTypes
 
-TOKEN = os.getenv("TELEGRAM_TOKEN")
+# TOKEN = os.getenv("TELEGRAM_TOKEN")
+TOKEN = "8793230627:AAFAc987PxepN-5ELULae-TQpNL67_xgH3o"
+
 
 last_reply_time = {}
 # Приветствие новых участников
@@ -25,7 +28,7 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     now = time.time()
 
     # анти-спам: 20 секунд
-    if user_id in last_reply_time and now - last_reply_time[user_id] < 20:
+    if user_id in last_reply_time and now - last_reply_time[user_id] < 10:
         return
 
     text = update.message.text.lower()
@@ -34,7 +37,19 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     hello_keywords = ["barior", "barev", "baylus", "priv", "բարև"]
     how_keywords = ["voncek","vonc","inchpes","vonceq", "lavek","laveq"]
     how2_keywords = ["inch ka","inch ka chka","inch ek anum"]
-    manvel_keywords = ["almaz","almazner"]
+    manvelAlmaz_keywords = ["almaz","almazner"]
+    Armen_keywords = ["armen","Armen","armeni","armenia"]
+    Zzvcrir_keywords = ["zzvcrik","zzva","zzvcrir","zzveli","zzvum em"]
+    Gor_keywords = ["gor","gorik","goro"]
+    Ed_keywords = ["ed","edik","edikyan"]
+    Ero_keywords = ["ero","erik","er"]
+    Jin_keywords = ["jin","jino","jinoyan"]
+    Lyov_keywords = ["lyov","levon","lev",]
+    Raf_keywords = ["raf","rafo","rafik","rafayel"]
+    Vova_keywords = ["vova","vovik","vov","vovikyan"]
+    Manvel_keywords = ["manvel","manvelik","manvelyan"]
+    Daniel_keywords = ["daniel","danik","dani","dan","danielyan"]
+
 
     # используем elif, чтобы бот ответил только один раз
     if any(word in text for word in hello_keywords):
@@ -49,9 +64,148 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("Բան չէ դու ասա 😊")
         last_reply_time[user_id] = now
 
-    elif any(word in text for word in manvel_keywords):
-        await update.message.reply_text("ես լսեցի Ալմազ, կանչում եմ Մանվելին 😅")
+    elif any(word in text for word in manvelAlmaz_keywords):
+        await update.message.reply_text("ես լսեցի Ալմազ՞ Կանչում եմ Մանվելին😅")
         last_reply_time[user_id] = now
+    
+
+    elif any(word in text for word in Armen_keywords):
+        videos = [
+            "Armen.MP4",
+        ]
+
+        video_path = random.choice(videos)
+
+        with open(video_path, "rb") as video:
+            await update.message.reply_video(video)
+
+        last_reply_time[user_id] = now
+
+    elif any(word in text for word in Zzvcrir_keywords):
+        videos = [
+            "Zzvcrir.MP4",
+        ]
+
+        video_path = random.choice(videos)
+
+        with open(video_path, "rb") as video:
+            await update.message.reply_video(video)
+
+        last_reply_time[user_id] = now
+
+    elif any(word in text for word in Gor_keywords):
+        videos = [
+            "Gor.MP4",
+        ]
+
+        video_path = random.choice(videos)
+
+        with open(video_path, "rb") as video:
+            await update.message.reply_video(video)
+
+        last_reply_time[user_id] = now
+
+    elif any(word in text for word in Ed_keywords):
+        videos = [
+            "Ed.MP4",
+        ]
+
+        video_path = random.choice(videos)
+
+        with open(video_path, "rb") as video:
+            await update.message.reply_video(video)
+
+        last_reply_time[user_id] = now
+
+    elif any(word in text for word in Ero_keywords):
+        videos = [
+            "Ero.MP4",
+        ]
+
+        video_path = random.choice(videos)
+
+        with open(video_path, "rb") as video:
+            await update.message.reply_video(video)
+
+        last_reply_time[user_id] = now
+
+    elif any(word in text for word in Jin_keywords):
+        videos = [
+            "Jin1.MP4",
+            "Djin.MP4",
+        ]
+
+        video_path = random.choice(videos)
+
+        with open(video_path, "rb") as video:
+            await update.message.reply_video(video)
+
+        last_reply_time[user_id] = now
+
+    elif any(word in text for word in Lyov_keywords):
+        videos = [
+            "Lyov.MP4",
+            
+        ]
+
+        video_path = random.choice(videos)
+
+        with open(video_path, "rb") as video:
+            await update.message.reply_video(video)
+
+        last_reply_time[user_id] = now
+
+    elif any(word in text for word in Raf_keywords):
+        videos = [
+            "Raf1.MP4",
+            "Raf2.MP4",
+        ]
+
+        video_path = random.choice(videos)
+
+        with open(video_path, "rb") as video:
+            await update.message.reply_video(video)
+
+        last_reply_time[user_id] = now
+
+    elif any(word in text for word in Vova_keywords):
+        videos = [
+            "Vova.MP4",
+        ]
+
+        video_path = random.choice(videos)
+
+        with open(video_path, "rb") as video:
+            await update.message.reply_video(video)
+
+        last_reply_time[user_id] = now
+
+    elif any(word in text for word in Manvel_keywords):
+        videos = [
+            "Manvel.MP4",
+            "Manvel2.MP4",
+        ]
+
+        video_path = random.choice(videos)
+
+        with open(video_path, "rb") as video:
+            await update.message.reply_video(video)
+
+        last_reply_time[user_id] = now
+
+    elif any(word in text for word in Daniel_keywords):
+        videos = [
+            "Dan1.MP4",
+            "Dan2.MP4",
+        ]
+
+        video_path = random.choice(videos)
+
+        with open(video_path, "rb") as video:
+            await update.message.reply_video(video)
+
+        last_reply_time[user_id] = now
+
 
 app = ApplicationBuilder().token(TOKEN).build()
 
