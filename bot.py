@@ -42,7 +42,7 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     Zzvcrir_keywords = ["zzvcrik","zzva","zzvcrir","zzveli","zzvum em"]
     Gor_keywords = ["gor","gorik","goro"]
     Ed_keywords = ["ed","edik","edikyan"]
-    Ero_keywords = ["ero","erik","er"]
+    Ero_keywords = ["ero","erik",]
     Jin_keywords = ["jin","jino","jinoyan"]
     Lyov_keywords = ["lyov","levon","lev",]
     Raf_keywords = ["raf","rafo","rafik","rafayel"]
