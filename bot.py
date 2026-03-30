@@ -176,7 +176,7 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     elif any(word in text for word in Vova_keywords):
         videos = [
-            "Vova.MP4",
+            "Vova.mp4",
         ]
 
         video_path = random.choice(videos)
@@ -238,7 +238,7 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     elif any(word in text for word in Jox_keywords):
         videos = [
-            "Jox.MP4",
+            "jox.MP4",
         ]
 
         video_path = random.choice(videos)
