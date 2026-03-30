@@ -49,6 +49,8 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     Vova_keywords = ["vova","vovik","vov","vovikyan"]
     Manvel_keywords = ["manvel","manvelik","manvelyan"]
     Daniel_keywords = ["daniel","danik","dani","dan","danielyan"]
+    Lerno_keywords = ["lerno","lernik","lerni","lern","lernelyan"]
+
 
 
     # используем elif, чтобы бот ответил только один раз
@@ -206,7 +208,18 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         last_reply_time[user_id] = now
 
+    elif any(word in text for word in Lerno_keywords):
+        videos = [
+            "Lerno.MP4",
+        ]
 
+        video_path = random.choice(videos)
+
+        with open(video_path, "rb") as video:
+            await update.message.reply_video(video)
+
+        last_reply_time[user_id] = now
+        
 app = ApplicationBuilder().token(TOKEN).build()
 
 app.add_handler(MessageHandler(filters.StatusUpdate.NEW_CHAT_MEMBERS, welcome))
