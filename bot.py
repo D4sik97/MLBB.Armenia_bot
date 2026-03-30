@@ -51,7 +51,7 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     Daniel_keywords = ["daniel","danik","dani","dan","danielyan"]
     Lerno_keywords = ["lerno","lernik","lerni","lern","lernelyan"]
     Hayko_keywords = ["hayko","hayk","haykik"]
-
+    Aram_keywords = ["aram","aramik","aramyan"]
     Jox_keywords = ["jox","joxovurd","joxs"]
 
 
@@ -248,6 +248,17 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         last_reply_time[user_id] = now
 
+    elif any(word in text for word in Aram_keywords):
+        videos = [
+            "Aram.MP4",
+        ]
+
+        video_path = random.choice(videos)
+
+        with open(video_path, "rb") as video:
+            await update.message.reply_video(video)
+
+        last_reply_time[user_id] = now
 
 
 
