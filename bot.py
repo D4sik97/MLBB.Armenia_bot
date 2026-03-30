@@ -52,6 +52,9 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     Lerno_keywords = ["lerno","lernik","lerni","lern","lernelyan"]
     Hayko_keywords = ["hayko","hayk","haykik"]
 
+    Jox_keywords = ["jox","joxovurd","joxs"]
+
+
 
 
 
@@ -71,7 +74,6 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif any(word in text for word in manvelAlmaz_keywords):
         await update.message.reply_text("ես լսեցի Ալմա՞զ Կանչում եմ Մանվելին😅")
         last_reply_time[user_id] = now
-    
 
     elif any(word in text for word in Armen_keywords):
         videos = [
@@ -233,6 +235,22 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_video(video)
 
         last_reply_time[user_id] = now
+
+    elif any(word in text for word in Jox_keywords):
+        videos = [
+            "Jox.MP4",
+        ]
+
+        video_path = random.choice(videos)
+
+        with open(video_path, "rb") as video:
+            await update.message.reply_video(video)
+
+        last_reply_time[user_id] = now
+
+
+
+
 app = ApplicationBuilder().token(TOKEN).build()
 
 app.add_handler(MessageHandler(filters.StatusUpdate.NEW_CHAT_MEMBERS, welcome))
