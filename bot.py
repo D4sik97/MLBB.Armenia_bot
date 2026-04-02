@@ -5,8 +5,8 @@ import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTypes
 
-# TOKEN = os.getenv("TELEGRAM_TOKEN")
-TOKEN = "8793230627:AAFAc987PxepN-5ELULae-TQpNL67_xgH3o"
+TOKEN = os.getenv("TELEGRAM_TOKEN")
+# TOKEN = "8793230627:AAFAc987PxepN-5ELULae-TQpNL67_xgH3o"
 
 
 last_reply_time = {}
@@ -49,11 +49,11 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     Vova_keywords = ["vova","vovik","vov","vovikyan"]
     Manvel_keywords = ["manvel","manvelik","manvelyan"]
     Daniel_keywords = ["daniel","danik","dani","dan","danielyan"]
-    Amali_keywords = ["amali","amalik","amaliyan","amalya"]
     Lerno_keywords = ["lerno","lernik","lerni","lern","lernelyan"]
     Hayko_keywords = ["hayko","hayk","haykik"]
     Aram_keywords = ["aram","aramik","aramyan"]
     Jox_keywords = ["jox","joxovurd","joxs"]
+    Amali_keywords = ["amali","amalik","amaliyan","amalya"]
 
 
 
@@ -271,7 +271,6 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
         with open(video_path, "rb") as video:
             await update.message.reply_video(video)
 
-        last_reply_time[user_id] = now
 
 
 
