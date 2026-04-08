@@ -57,6 +57,8 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     Amali_keywords = ["amali","amalik","amaliyan","amalya"]
     Vahagn_keywords = ["vahagn","vahag","vahe"]
     Klaus_keywords = ["klaus","klausi","klausan"]
+    Gisher_keywords = ["gisher","gisheri","gisheryan"]
+
 
 
 
@@ -301,6 +303,22 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_video(video)
 
         last_reply_time[user_id] = now
+
+    elif any(word in text for word in Gisher_keywords):
+        videos = [
+            "Gisher.MP4",
+            "Gisher1.MP4",
+            "Gisher2.MP4",
+            "Gisher3.MP4",
+            "Gisher4.MP4",
+        ]
+
+        video_path = random.choice(videos)
+
+        with open(video_path, "rb") as video:
+            await update.message.reply_video(video)
+
+        last_reply_time[user_id] = now   
 
 
 app = ApplicationBuilder().token(TOKEN).build()
