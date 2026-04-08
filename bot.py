@@ -8,6 +8,7 @@ from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTyp
 TOKEN = os.getenv("TELEGRAM_TOKEN")
 # TOKEN = "8793230627:AAFAc987PxepN-5ELULae-TQpNL67_xgH3o"
 
+namewewew = "Aram"
 
 last_reply_time = {}
 # Приветствие новых участников
