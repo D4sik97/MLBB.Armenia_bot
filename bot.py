@@ -61,7 +61,7 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     Dav_keywords = ["dav","davi","david"]
     Kost_keywords = ["kost","kostik","kostyan"]
     Frunz_keywords = ["frunz","frunzik","frunzyan"]
-    Harut_keywords = ["harut","harutik","harutyunyan"]
+    Harut_keywords = ["harut","harutikkkk","harutyunyan"]
 
 
 
