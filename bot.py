@@ -5,8 +5,8 @@ import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTypes
 
-TOKEN = os.getenv("TELEGRAM_TOKEN")
-# TOKEN = "8793230627:AAFAc987PxepN-5ELULae-TQpNL67_xgH3o"
+# TOKEN = os.getenv("TELEGRAM_TOKEN")
+TOKEN = "8793230627:AAFAc987PxepN-5ELULae-TQpNL67_xgH3o"
 
 namewewew = "Aram"
 
