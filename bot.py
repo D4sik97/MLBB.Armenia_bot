@@ -58,6 +58,10 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     Vahagn_keywords = ["vahagn","vahag","vahe"]
     Klaus_keywords = ["klaus","klausi","klausan"]
     Gisher_keywords = ["gisher","gisheri","gisheryan"]
+    Dav_keywords = ["dav","davi","david"]
+    Kost_keywords = ["kost","kostik","kostyan"]
+    Frunz_keywords = ["frunz","frunzik","frunzyan"]
+    Harut_keywords = ["harut","harutik","harutyunyan"]
 
 
 
@@ -271,6 +275,7 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif any(word in text for word in Amali_keywords):
         videos = [
             "Amali.MP4",
+            "Amali2.MP4",
         ]
 
         video_path = random.choice(videos)
@@ -320,6 +325,55 @@ async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         last_reply_time[user_id] = now   
 
+    elif any(word in text for word in Dav_keywords):
+        videos = [
+            "Dav.MP4",
+        ]
+
+        video_path = random.choice(videos)
+
+        with open(video_path, "rb") as video:
+            await update.message.reply_video(video)
+
+        last_reply_time[user_id] = now
+
+    elif any(word in text for word in Kost_keywords):
+        videos = [
+            "Kost.MP4",
+        ]
+
+        video_path = random.choice(videos)
+
+        with open(video_path, "rb") as video:
+            await update.message.reply_video(video)
+
+        last_reply_time[user_id] = now
+
+
+    elif any(word in text for word in Frunz_keywords):
+        videos = [
+            "Frunz.MP4",
+        ]
+
+        video_path = random.choice(videos)
+
+        with open(video_path, "rb") as video:
+            await update.message.reply_video(video)
+
+        last_reply_time[user_id] = now
+
+
+    elif any(word in text for word in Harut_keywords):
+        videos = [
+            "Harut.MP4",
+        ]
+
+        video_path = random.choice(videos)
+
+        with open(video_path, "rb") as video:
+            await update.message.reply_video(video)
+
+        last_reply_time[user_id] = now           
 
 app = ApplicationBuilder().token(TOKEN).build()
 
